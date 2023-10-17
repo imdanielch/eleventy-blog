@@ -7,51 +7,52 @@ featuredpost: false
 featuredimagealt:
 featuredimage:
 description:
+layout: layouts/post.njk
 tags:
   - Ionic
 ---
 ## Tutorials
 
-Songhop build:
+### Songhop build:
 https://thinkster.io/ionic-framework-tutorial/
 
-Lynda's Ionic tutorial:
+### Lynda's Ionic tutorial:
 
-part1: https://www.youtube.com/watch?v=93K6xtYxMgg
+- part1: https://www.youtube.com/watch?v=93K6xtYxMgg
 
-part2: https://www.youtube.com/watch?v=uEziLWMN2VU
+- part2: https://www.youtube.com/watch?v=uEziLWMN2VU
 
-Angularjs Scope:
+### Angularjs Scope:
 
 https://github.com/angular/angular.js/wiki/Understanding-Scopes
 
-Angularjs Sharing data across controllers:
+### Angularjs Sharing data across controllers:
 
 http://onehungrymind.com/angularjs-sticky-notes-pt-1-architecture/
 
-Autogrowing textarea height:
+### Autogrowing textarea height:
 
 http://forum.ionicframework.com/t/auto-growing-textarea-in-ionic/6213
 
-##Troubleshooting:
+## Troubleshooting:
 
-Getting data from a service to the controller in order for states to access them:
+### Getting data from a service to the controller in order for states to access them:
 http://stackoverflow.com/questions/31100796/sharing-services-variables-across-controllers-angular-ionic
-Network error when emulating Android:
+### Network error when emulating Android:
 http://abou-kone.com/2015/04/25/ionic-there-was-a-network-error-when-running-on-genymotion/
 
-when running "ionic build android" it claims "java -version" failed, but when you type it out, it works. This however doesn't mean java JDK is installed. ```sudo apt-get install default-jdk``` can fix the problem.
+when running "ionic build android" it claims "java -version" failed, but when you type it out, it works. This however doesn't mean java JDK is installed. `sudo apt-get install default-jdk` can fix the problem.
 
 Also, if your function fails when testing in browser, make sure it's not cordova related. Otherwise it might only work on device or emulation.
 
-Cordova not letting you use geo:, tel:, or any external links?
+### Cordova not letting you use geo:, tel:, or any external links?
 https://github.com/apache/cordova-plugin-whitelist
 
-##Android Support:
+## Android Support:
 http://stackoverflow.com/questions/24522921/how-do-you-build-and-deploy-to-an-older-version-of-android-for-ionic-cordova
 
-Geo URI:
+### Geo URI:
 https://developer.android.com/guide/components/intents-common.html
 
-AngularJS structure:
+### AngularJS structure:
 http://mcgivery.com/structure-of-an-ionic-app/

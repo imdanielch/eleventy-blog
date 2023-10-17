@@ -1,12 +1,13 @@
 ---
 templateKey: blog-post
 status: published
-title: 2017-04-29 Setting samba shares
+title: Setting samba shares
 date: 2017-04-29T06:36:39.213Z
 featuredpost: false
 featuredimagealt:
 featuredimage: 
 description:
+layout: layouts/post.njk
 tags:
 ---
 Samba shares have always been a little confusing. Their authentication system doesn't use the UNIX accounts.
@@ -29,7 +30,8 @@ Mine was `/media/media5/`
 5. and edit the config file to fit your needs
 `sudo vim /etc/samba/smb.conf`
     I wanted to make the share read only and write for my user. This is the settings I used.
-    ```
+
+    ```ini
     [share]
     path = /media/media5
     browseable = yes
@@ -38,6 +40,7 @@ Mine was `/media/media5/`
     write list = daniel bob steve
     create mask = 755
     ```
+    
     guest ok allows anonymous users.
     read only will make everyone have read only permissions.
     write list makes the users listed to be able to write too. However these users are those you set 

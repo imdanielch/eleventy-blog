@@ -7,6 +7,7 @@ featuredpost: false
 featuredimagealt:
 featuredimage:
 description:
+layout: layouts/post.njk
 tags:
 ---
 
@@ -35,7 +36,7 @@ In this scenario, `Tests` is my unit test directory and I want `test_moduleA.py`
 
 `Application` directory is the parent of the project so we need to add it to `sys.path` for python to be able to find it.
 
-```
+```python
 import sys
 sys.path.insert(0, os.path.join('Project_Parent', 'Application'))
 from Module.moduleA import function_in_moduleA

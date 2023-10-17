@@ -1,12 +1,13 @@
 ---
 templateKey: blog-post
 status: published
-title: February 3rd, 2014 - How I'm learning Korean.
+title: How I'm learning Korean.
 date: 2014-02-07T20:11:49.000Z
 featuredpost: false
 featuredimagealt:
 featuredimage: 
 description:
+layout: layouts/post.njk
 tags:
 ---
 ![Running Man Logo](https://upload.wikimedia.org/wikipedia/en/2/24/RunningMan.jpg)

@@ -1,12 +1,13 @@
 ---
 templateKey: blog-post
 status: published
-title: April 16th, 2014 How I want out of this lifestyle
+title: How I want out of this lifestyle
 date: 2014-04-17T05:15:10.000Z
 featuredpost: false
 featuredimagealt:
 featuredimage: 
 description:
+layout: layouts/post.njk
 tags:
 ---
 It actually probably isn't a surprise to people that I want to change my lifestyle. This including how antisocial I am, the lack of exercise, the job I have, and ultimately, I suppose, my overall satisfaction with life.

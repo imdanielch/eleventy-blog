@@ -7,6 +7,7 @@ featuredpost: false
 featuredimagealt:
 featuredimage:
 description:
+layout: layouts/post.njk
 tags:
 ---
 Well, for what it's worth, I have finished my design for my business cards. I plan on using these when I'm at [TXLF](https://texaslinuxfest.org/). Without further ado, here they are!

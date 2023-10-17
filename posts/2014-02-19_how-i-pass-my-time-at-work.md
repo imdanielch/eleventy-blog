@@ -1,12 +1,13 @@
 ---
 templateKey: blog-post
 status: published
-title: February 18th, 2013 - How I pass my time at work.
+title: How I pass my time at work.
 date: 2014-02-19T16:02:29.000Z
 featuredpost: false
 featuredimagealt:
 featuredimage: 
 description:
+layout: layouts/post.njk
 tags:
 ---
 While at work we all have some break time where we have to wait for something to happen or complete. There's also time where we deal with such mundane tasks which require minimal brain power and our eyes wander to the clock to realize how torpid the minute arm is.

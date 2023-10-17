@@ -1,0 +1,19 @@
+<ul reversed class="featuredlist" style="featuredlist-item">
+{% for post in postslist | reverse %}
+  <li class="featuredlist-item{% if post.url == url %} featuredlist-item-active{% endif %}">
+    <div class="featuredlist-header">
+    <a href="{{ post.url | url }}" class="featuredlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+    <time class="featuredlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+    {% for tag in post.data.tags | filterTagList %}
+      {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+      <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+    {% endfor %}
+    </div>
+    {% if post.data.description %}
+      <p class="featuredlist-description">
+      {{ post.data.description }}
+      <p>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>

@@ -7,6 +7,7 @@ featuredpost: true
 featuredimagealt:
 featuredimage: 
 description:
+layout: layouts/post.njk
 tags:
   - kvm
   - linux

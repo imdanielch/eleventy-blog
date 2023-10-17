@@ -3,9 +3,9 @@ const fs = require("fs");
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const shiki = require("shiki");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
@@ -15,7 +15,7 @@ module.exports = function(eleventyConfig) {
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
+  //eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
 
   eleventyConfig.addFilter("readableDate", dateObj => {
@@ -60,6 +60,21 @@ module.exports = function(eleventyConfig) {
     return filterTagList([...tagSet]);
   });
 
+  eleventyConfig.on("eleventy.before", async () => {
+    const highlighter = await shiki.getHighlighter({
+       theme: "github-dark",
+       //langs: ["bash", "toml", "javascript", "python", "csharp", "typescript", "cpp"]
+       });
+    eleventyConfig.amendLibrary("md", (mdLib) =>
+      mdLib.set({
+        highlight: (code, lang) => highlighter.codeToHtml(code, { lang }),
+      })
+    );
+  });
+
+  // This is a hack to let eleventy know that we touch that library
+  eleventyConfig.amendLibrary("md", () => {});
+
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
     html: true,
@@ -75,22 +90,40 @@ module.exports = function(eleventyConfig) {
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  // Override Browsersync defaults (used only with --serve)
-  eleventyConfig.setBrowserSyncConfig({
-    callbacks: {
-      ready: function(err, browserSync) {
-        const content_404 = fs.readFileSync('_site/404.html');
+  eleventyConfig.setServerOptions({
+    // Default values are shown:
 
-        browserSync.addMiddleware("*", (req, res) => {
-          // Provides the 404 content without redirect.
-          res.writeHead(404, {"Content-Type": "text/html; charset=UTF-8"});
-          res.write(content_404);
-          res.end();
-        });
-      },
+    // Whether the live reload snippet is used
+    liveReload: true,
+
+    // Whether DOM diffing updates are applied where possible instead of page reloads
+    domDiff: true,
+
+    // The starting port number
+    // Will increment up to (configurable) 10 times if a port is already in use.
+    port: 8080,
+
+    // Additional files to watch that will trigger server updates
+    // Accepts an Array of file paths or globs (passed to `chokidar.watch`).
+    // Works great with a separate bundler writing files to your output folder.
+    // e.g. `watch: ["_site/**/*.css"]`
+    watch: [],
+
+    // Show local network IP addresses for device testing
+    showAllHosts: false,
+
+    // Use a local key/certificate to opt-in to local HTTP/2 with https
+    https: {
+      // key: "./localhost.key",
+      // cert: "./localhost.cert",
     },
-    ui: false,
-    ghostMode: false
+
+    // Change the default file encoding for reading/serving files
+    encoding: "utf-8",
+
+    // Show the dev server version number on the command line
+    showVersion: false,
+    injectedScriptsFolder: "absproxy/8080"
   });
 
   return {

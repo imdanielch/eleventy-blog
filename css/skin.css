@@ -1,16 +1,10 @@
-/* Defaults */
-:root {
-  --font-family: -apple-system, system-ui, sans-serif;
-  --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
-}
-
 /* Theme colors */
 :root {
-  --color-gray-20: #e0e0e0;
-  --color-gray-50: #C0C0C0;
-  --color-gray-90: #333;
+  --color-gray-20: #FF6969;
+  --color-gray-50: #C70039;
+  --color-gray-90: #141E46;
 
-  --background-color: #fff;
+  --background-color: #FFF5E0;
 
   --text-color: var(--color-gray-90);
   --text-color-link: #082840;
@@ -19,15 +13,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-gray-20: #e0e0e0;
-    --color-gray-50: #C0C0C0;
-    --color-gray-90: #dad8d8;
+    --color-gray-20: #FFF5E0;
+    --color-gray-50: #C70039;
+    --color-gray-90: #FFF5E0;
 
     /* --text-color is assigned to --color-gray-_ above */
-    --text-color-link: #1493fb;
-    --text-color-link-visited: #a6a6f8;
+    --text-color-link: #FF6969;
+    --text-color-link-visited: #C70039;
 
-    --background-color: #15202b;
+    --background-color: #141E46;
   }
 }
 
@@ -45,10 +39,7 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
 }
-.content {
-  width: 60%;
-  margin: 0 auto;
-}
+
 p:last-child {
   margin-bottom: 0;
 }
@@ -118,13 +109,6 @@ pre {
 code {
   word-break: break-all;
 }
-code:not(pre code) {
-  color: #E1E4E8;
-  background-color: #24292e;
-  border-radius: 3px;
-  padding: 0.05em;
-  border: #555 solid 1px;
-}
 
 /* Header */
 .home {
@@ -155,49 +139,6 @@ code:not(pre code) {
   font-weight: 700;
   text-decoration: underline;
 }
-
-/* Posts list */
-.postlist {
-  list-style: none;
-  padding: 0;
-}
-.postlist-item {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  counter-increment: start-from -1;
-  line-height: 1.8;
-}
-.postlist-item:before {
-  display: inline-block;
-  pointer-events: none;
-  content: "" counter(start-from, decimal-leading-zero) ". ";
-  line-height: 100%;
-  text-align: right;
-}
-.postlist-date,
-.postlist-item:before {
-  font-size: 0.8125em; /* 13px /16 */
-  color: var(--color-gray-90);
-}
-.postlist-date {
-  word-spacing: -0.5px;
-}
-.postlist-link {
-  padding-left: .25em;
-  padding-right: .25em;
-  text-underline-position: from-font;
-  text-underline-offset: 0;
-  text-decoration-thickness: 1px;
-}
-.postlist-item-active .postlist-link {
-  font-weight: normal;
-}
-.tmpl-home .postlist-link {
-  font-size: 1.1875em; /* 19px /16 */
-  font-weight: 400;
-}
-
 
 /* Tags */
 .post-tag {

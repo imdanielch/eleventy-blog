@@ -7,6 +7,7 @@ featuredpost: false
 featuredimagealt:
 featuredimage:
 description:
+layout: layouts/post.njk
 tags:
 ---
 Git bash on windows allows you to generate an ssh key by using openssl.

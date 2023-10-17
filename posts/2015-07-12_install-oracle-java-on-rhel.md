@@ -7,6 +7,7 @@ featuredpost: false
 featuredimagealt:
 featuredimage:
 description:
+layout: layouts/post.njk
 tags:
   - oracle
   - java

@@ -1,0 +1,42 @@
+/* Posts list */
+.featuredlist {
+  list-style: none;
+  padding: 0;
+}
+.featuredlist-item:before {
+  display: inline-block;
+  pointer-events: none;
+  line-height: 100%;
+  text-align: right;
+}
+.featuredlist-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  line-height: 1.8;
+}
+.featuredlist-date,
+.featuredlist-item:before {
+  font-size: 0.8125em; /* 13px /16 */
+  color: var(--color-gray-90);
+}
+.featuredlist-date {
+  word-spacing: -0.5px;
+}
+.featuredlist-link {
+  padding-left: .25em;
+  padding-right: .25em;
+  text-underline-position: from-font;
+  text-underline-offset: 0;
+  text-decoration-thickness: 1px;
+}
+.featuredlist-item-active .featuredlist-link {
+  font-weight: bold;
+}
+.tmpl-home .featuredlist-link {
+  font-size: 1.1875em; /* 19px /16 */
+  font-weight: 700;
+}
+.featuredlist-description {
+  padding-left: 1em;
+}

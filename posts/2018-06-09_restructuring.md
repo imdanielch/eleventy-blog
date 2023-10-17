@@ -6,7 +6,8 @@ date: 2018-06-09T19:22:40.625Z
 featuredpost: false
 featuredimagealt:
 featuredimage:
-description:
+description: restructuring my blog to use eleventy, hopefully simplifying things
+layout: layouts/post.njk
 tags:
 ---
 I'm currently undergoing changes for this website. I'll be posting more articles about UX and development and setting up a portfolio.

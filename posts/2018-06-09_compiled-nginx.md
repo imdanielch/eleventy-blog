@@ -7,6 +7,7 @@ featuredpost: false
 featuredimagealt:
 featuredimage: 
 description:
+layout: layouts/post.njk
 tags:
 ---
 Compiling nginx in ubuntu and want it to work with systemd?
@@ -15,7 +16,7 @@ Installed location was `/usr/local/nginx/` You'd need to change
 This is the `/lib/systemd/system/nginx.service` file and then run
 `# systemctl daemon-reload`
 
-```
+```ini
 [Unit]
 Description=The NGINX HTTP and reverse proxy server
 After=syslog.target network.target remote-fs.target nss-lookup.target

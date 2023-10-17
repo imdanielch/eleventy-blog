@@ -6,6 +6,7 @@ featuredpost: false
 featuredimage:
 featuredimagealt:
 description:
+layout: layouts/post.njk
 tags:
   - rambling
   - non tech
