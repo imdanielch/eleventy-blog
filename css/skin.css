@@ -13,8 +13,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-gray-20: #FFF5E0;
-    --color-gray-50: #C70039;
+    --color-gray-20: #444050;
+    --color-gray-50: #AAA5B0;
     --color-gray-90: #FFF5E0;
 
     /* --text-color is assigned to --color-gray-_ above */

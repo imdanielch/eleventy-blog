@@ -49,6 +49,11 @@ body {
   width: 60%;
   margin: 0 auto;
 }
+@media only screen and (max-width: 600px) {
+  .content {
+    width: 90%;
+  }
+}
 p:last-child {
   margin-bottom: 0;
 }
@@ -182,6 +187,7 @@ code:not(pre code) {
 }
 .postlist-date {
   word-spacing: -0.5px;
+  color: var(--color-gray-50);
 }
 .postlist-link {
   padding-left: .25em;

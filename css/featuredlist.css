@@ -22,6 +22,7 @@
 }
 .featuredlist-date {
   word-spacing: -0.5px;
+  color: var(--color-gray-50);
 }
 .featuredlist-link {
   padding-left: .25em;
